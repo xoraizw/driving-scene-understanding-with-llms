@@ -1,0 +1,138 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 216 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 216 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 20% 15%;
+
+    --primary: 216 70% 50%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 215 16% 94%;
+    --secondary-foreground: 216 20% 15%;
+
+    --muted: 215 16% 94%;
+    --muted-foreground: 216 10% 45%;
+
+    --accent: 216 70% 95%;
+    --accent-foreground: 216 70% 50%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 216 10% 90%;
+    --input: 216 10% 90%;
+    --ring: 216 70% 50%;
+
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  html, body, #root {
+    @apply h-full w-full overflow-hidden;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+  
+  /* Glass morphism */
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-lg;
+  }
+  
+  .glass-dark {
+    @apply bg-foreground/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  /* Animations */
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  /* Gallery items */
+  .gallery-item {
+    @apply relative rounded-lg overflow-hidden cursor-pointer transition-all duration-300;
+  }
+  
+  .gallery-item:hover {
+    @apply ring-2 ring-primary/80 shadow-md;
+    transform: translateY(-2px);
+  }
+  
+  .gallery-item.active {
+    @apply ring-2 ring-primary shadow-md;
+  }
+  
+  /* Chat interface */
+  .chat-container {
+    @apply flex flex-col h-full;
+  }
+  
+  .chat-messages {
+    @apply flex-1 overflow-y-auto px-6 py-4 space-y-6;
+  }
+  
+  .message-user {
+    @apply flex items-start space-x-3 animate-slide-up opacity-0;
+  }
+  
+  .message-assistant {
+    @apply flex items-start space-x-3 animate-slide-up opacity-0;
+  }
+  
+  .message-bubble-user {
+    @apply px-4 py-3 rounded-2xl rounded-tr-sm bg-accent text-accent-foreground max-w-[85%];
+  }
+  
+  .message-bubble-assistant {
+    @apply px-4 py-3 rounded-2xl rounded-tl-sm glass-dark max-w-[85%];
+  }
+  
+  .input-container {
+    @apply p-4 border-t border-border;
+  }
+  
+  .pcd-viewer {
+    @apply rounded-lg overflow-hidden bg-black/5 relative;
+    min-height: 200px;
+  }
+  
+  /* Loading and transitions */
+  .loading-dot {
+    @apply inline-block w-1.5 h-1.5 bg-muted-foreground rounded-full;
+  }
+  
+  .loading-dot:nth-child(1) {
+    animation: pulse-subtle 1s infinite 0s;
+  }
+  
+  .loading-dot:nth-child(2) {
+    animation: pulse-subtle 1s infinite 0.2s;
+  }
+  
+  .loading-dot:nth-child(3) {
+    animation: pulse-subtle 1s infinite 0.4s;
+  }
+}
