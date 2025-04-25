@@ -1,4 +1,7 @@
-# Welcome to My Senior Project
+# Welcome to Our Senior Project
+## Aazen Saleem
+## Ahmad Xoraiz Waheed
+## Ahsan Mir
 
 ## Project info
 
